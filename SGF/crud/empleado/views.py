@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from empleado.models import Empleado
+from django.shortcuts import render
 from empleado.forms import EmpleadoForm
-
-from crud.empleado.models import Empleado
+from empleado.models import Empleado
 
 
 # Create your views here.
@@ -13,17 +12,17 @@ def emp(request):
         if form.is_valid():
             try:
                 form.save()
-                return redirect("/show")
+                return redirect('/show')
             except:
                 pass
-        else:
-            form = Empleado()
-        return render(request, 'index.html', {'form': form})
+    else:
+        form = Empleado()
+    return render(request, 'index.html', {'form': form})
 
 
 def show(request):
-    empleado = Empleado.objects.all()
-    return render(request, 'show.html', {'empleado': empleado})
+    empleados = Empleado.objects.all()
+    return render(request, "show.html", {'empleados': empleados})
 
 
 def edit(request, id):
@@ -37,7 +36,6 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect("/show")
-
     return render(request, 'edit.html', {'empleado': empleado})
 
 

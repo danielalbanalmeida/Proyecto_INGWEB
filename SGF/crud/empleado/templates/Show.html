@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Empleados</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Empleado ID</th>
+                <th>Nombre Empleado</th>
+                <th>Email Empleado</th>
+                <th>Contacto Empleado</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{empleado.ide }}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.email}}</td>
+                <td>{{empleado.contacto}}</td>
+                <td>
+                    <a href="/edit/{{ empleado.id }}">Edit</a>
+                    <a href="/delete/{{empleado.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a style="color:white;" href="/emp">ADD NEW RECORD</a></button>
+</body>
+
+</html>
