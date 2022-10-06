@@ -32,7 +32,7 @@ def edit(request, id):
 
 def update(request, id):
     empleado = Empleado.objects.get(id=id)
-    form = Empleado(request.POST, instance=empleado)
+    form = EmpleadoForm(request.POST, instance = empleado)
     if form.is_valid():
         form.save()
         return redirect("/show")
