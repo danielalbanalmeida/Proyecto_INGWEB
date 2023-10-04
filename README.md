@@ -11,6 +11,9 @@ Engineering Design
 
 ![image](https://github.com/danielalbanalmeida/Proyecto_INGWEB/assets/55764851/07fd8cdd-493e-40bb-85bb-89d4096c99e2)
 
+Django is a python web framework that follows the Model-View-Controller (MVC) architectural pattern, which is often referred to as the the MVT pattern (in the context of django), where the Model represents the data and business logic, the View handles user resquests and responses, and the Template generates dynamic HTML pages.
 
-CRUD Proyecto Ingeniería Web
-Ejecutar la aplicación mediante el comando python manage.py runserver
+Django is built-in features, including its robust ORM, authentication system, and security measures, make it a powerful and efficient framework for building web applications. It promotes clean, maintainable, and scalable code by encouraging best practices and following the DRY principle.
+
+To execute the application run the following command:
+python manage.py runserver
